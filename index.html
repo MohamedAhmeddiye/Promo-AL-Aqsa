@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/section1.css">
+    <link rel="stylesheet" href="css/section2.css">
+    <link rel="stylesheet" href="css/section3.css"> -->
+    <link rel="stylesheet" href="style.css">
+<link rel="icon" href="img/Promo.jpg">
+    <title>Promo AL-Aqsa</title>
+    
+    
+    <style>
+        /* تنسيق الزر */
+        
+        
+        .header h1 {
+            color: #333;
+        }
+
+        #folder-section {
+            margin-top: 20px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+           color: white;
+            border: none;
+            cursor: pointer;
+        }
+     /* #msgbtn:{
+         background-color: #4CAF50;
+     }   
+         */
+
+        button:hover {
+            background-color: #45a049; /* لون الزر عند التمرير عليه */
+        }
+
+        .fileList {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        /* تنسيق قائمة الملفات */
+        
+      ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 5px 0;
+        }
+    </style>
+    
+    
+    
+    
+</head>
+
+<body>
+    <div id="container" onScroll="myFunction()">
+
+        <div class="header">
+            <h1>Promo AL-Aqsa</h1>
+            <p>La quatrième Promotion Des License Professionnelles à la FSJE</p>
+        </div>
+
+        <div class="topnav" id="navbar">
+            <div>
+                <a href="#s-home" id="home">Home</a>
+                <a href="#s-about" id="about">About</a>
+                <a href="#s-contact" id="contact">Contact </a>
+                <a href="#" id="Cours">Cours </a>
+                <a href="#" id="Archive">Archive </a>
+            </div>
+           
+        </div>
+
+        <div class="section-head" id="s-home">
+            <h1>Home</h1>
+        </div>
+        
+        <!-- إضافة الزرين لاستعراض المجلدين -->
+        <section id="folder-section">
+            <h2 id="folder-title">Browse files</h2> <!-- عنوان القسم مع id -->
+            <button id="view-reports" onclick="toggleFiles('reportsList', 'projectsList')">View reports</button>
+            <button id="view-projects" onclick="toggleFiles('projectsList', 'reportsList')">View projects</button>
+            
+            <!-- قائمة ملفات مجلد التقارير -->
+            <div id="reportsList" class="fileList">
+                <h3>Les Rapport:</h3>
+                <ul>
+                    <li><a href="https://drive.google.com/drive/folders/1NKtZuX_rJ2d5VzDQVn8taxUOIk9zrzgJ" download><i class="fa fa-file-pdf-o"></i> Rapport BCI</a></li>
+                    <li><a href="https://drive.google.com/drive/folders/1SCQBgUSvfPENoHujniP5PFjP4Dcu7TH1" download><i class="fa fa-file-word-o"></i> Rapport BFI(Word)</a></li>
+                    <li><a href="https://drive.google.com/drive/folders/1RBcYdelIzcH6iaAAelu4jjts7qv0O-39" download><i class="fa fa-file-pdf-o"></i> Rapport BNM (PDF)</a></li>
+                    <li><a href="https://drive.google.com/drive/folders/1mMGTI3NUtt1Nt8nRUhgMFUyhZdJy8NNq" download><i class="fa fa-file-pdf-o"></i> Rapport BPM (PDF)</a></li>
+                    <li><a href="https://drive.google.com/drive/folders/1yfzQ1fM9v7ltCmxB8j3dCZ4CLBJUJNcV" download><i class="fa fa-file-pdf-o"></i> Rapport GBM (PDF)</a></li>
+                    <li><a href="https://drive.google.com/drive/folders/13_VuhlOLMZKFApGQMGEqMXdJrEhArqky" download><i class="fa fa-file-pdf-o"></i> Autre Rapport (PDF)</a></li>
+                </ul>
+            </div>
+
+            <!-- قائمة ملفات مجلد المشاريع -->
+            <div id="projectsList" class="fileList">
+                <h3>Les projet:</h3>
+                <ul>
+                    <li><a href="Projet/PFE_AUTO LAVAGE.pdf"  download><i class="fa fa-file-pdf-o"></i> PFE_AUTO LAVAGE(PDF)</a></li>
+                    <li><a href="Projet/PFE_Société HIPCAR pour location de voiture.docx" download><i class="fa fa-file-word-o"></i> PFE_Société HIPCAR (Word)</a></li>
+                    <li><a href="Projet/PFE_BOULANGERIE PATISSERIE.pdf" download><i class="fa fa-file-pdf-o"></i> PFE_BOULANGERIE PATISSERIE(PDF)</a></li>
+                    <li><a href="Projet/PFE_Le Monde De Gâteaux.pdf" download><i class="fa fa-file-pdf-o"></i> PFE_Le Monde De Gàteaux(PDF)</a></li>
+                    <li><a href="Projet/PFE_BOULANGERIE ET PATISSERIE.pdf" download><i class="fa fa-file-pdf-o"></i> PFE_BOULANGERIE ET PATISSERIE(PDF)</a></li>
+                    <li><a href="Projet/All Projet" download><i class="fa fa-file-pdf-o"></i> All Projet(PDF)</a></li>
+                </ul>
+            </div>
+        </section>
+       
+
+        <section id="section-1">
+            <div class="row">
+                <div class="leftcolumn">
+                    <div class="card">
+                        <div class="cardimg">
+                            <img src="img/Promo.jpg" alt="" class="img1">
+                            <div class="info1">
+                                <h5>Promo AL-Aqsa</h5>
+                                <span>La quatrième Promotion Des License Professionnelles à la FSJE.</span>
+                            </div>
+                        </div>
+                        <div class="card-head">
+                            <h2>Quote</h2>
+                            <h5 id = "t-des">Created by Med Ahmed</h5>
+                        </div>
+             <p class="caption">أيها الخريجون الكرام، لقد بلغتم غاياتكم، وحققتم أمانيكم. والآن، فإنكم تخطون عتبة جديدة في حياتكم، عتبة العمل والمسؤولية. إنكم اليوم تحملون على عاتقكم أمانة عظيمة، أمانة بناء مجتمع أفضل. فلتكنوا خير خلف لخير سلف، وليكن شعاركم العلم والعمل والإخلاص. تذكروا أنكم قدوة للجيل القادم، فكونوا قدوة حسنة. والله ولي التوفيق.
+
+</p>
+                        <div class="read-more">
+                            <button>Read more</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cardimg">
+                            <img src="img/conc.jpg" alt="" class="img1">
+                            <div class="info1">
+                                <h5>Promo Al-Aqsa</h5>
+                                <span>La quatrième Promotion Des License Professionnelles à la FSJE.</span>
+                            </div>
+                        </div>
+
+                    <!--    <div class="card-head">
+                            <h2>Our Blogs</h2>
+                            <h5>Title description</h5>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem laborum cum ipsa totam dolores excepturi non, architecto animi rem voluptates? Reiciendis impedit quo ipsam esse a, fugiat excepturi nobis vitae?</p>
+                        <div class="read-more">
+                            <button>Read more</button>
+                        </div>
+                    </div>  -->
+                    
+                    
+                </div>
+                 <div class="rightcolumn"> <!--class="rightcolumn" -->
+                    <div class="card-1">
+                        <img src="img/FSJE.jpg"  alt="">
+                        <div class="card-1-con">
+                            <h3>About us</h3>
+                            <p class="p-comment-A">La promotion AL-Aqsa est la quatrième promotion aprés la promotion Al-Choumoukh des filiéres professionnelles de la Faculté des Sciences Juridiques et Economiques.<br>Cett promotion comprend trois spécialités : <br>Spécialités Banque et Assurance <br>Spécialités Finance et Comptabilité <br> Spécialités Gestion de Ressources Humaines. </p>
+                        </div>
+                    </div>
+                    <div class="card-2">
+                        <div class="p-head">
+                            <h3>Popular Post</h3>
+                        </div>
+                        <div id="p-list">
+                            <ul class="p-list">
+                                <hr>
+                                <li class="p-list-items">
+                                    <img src="img/we can.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+                                    <div class="p-list-para">
+                                        <span class="p-name">We Can</span>
+                                        <span class="p-comment">إنه جهد مشكور وفكرة مبتكرة تساهم في تعزيز المعرفة ودعم الطلاب في مختلف المراحل التعليمية. هذا الموقع لا يقدم فقط مستندات وأوراق علمية قيمة، بل يفتح آفاقاً جديدة للطلاب للاستفادة من تجارب وخبرات زملائهم  ومن توجيهات أساتذة أكاديميين محترفين مستقبلا.</span>
+                                    </div>
+                                </li>
+                                <hr>
+                                <li class="p-list-items">
+                                    <img src="img/Sidina.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+                                    <div class="p-list-para">
+                                        <span class="p-name">Sidina</span>
+                                        <span class="p-comment">أود أن أعبر عن دعمي وإعجابي العميق بفكرة إنشاء هذا الموقع الذي يهدف إلى مساعدة التلاميذ. إنها رؤية ملهمة ستحدث فارقاً حقيقياً في حياة الكثيرين. أشكر محمد على جهوده وإبداعه في هذه المبادرة النبيلة، فبفضل شغفه وإصراره، نرى نور الأمل يسطع في مستقبل التعليم.</span>
+                                    </div>
+                                </li>
+                                <hr>
+                                <li class="p-list-items">
+                                    <img src="img/sidiMed.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+                                    <div class="p-list-para">
+                                        <span class="p-name">Sidi Mohamed</span>
+                                        <span class="p-comment">أشكر القائمين على هذا المشروع وخاصةالزميل محمد على تفانيه وإصراره على تطوير هذا المصدر التعليمي الفريد. بفضل هذه الجهود، أصبح بإمكان الطلاب الوصول إلى مصادر أكاديمية موثوقة تساعدهم في رحلتهم التعليمية.
+
+                                            أرى أن هذا الموقع سيصبح مرجعاً أساسياً لكل طالب يسعى لتحقيق التميز الأكاديمي، ويعكس روح التعاون والمشاركة بين الطلاب والأساتذة. لكم جزيل الشكر على هذه المبادرة القيمة، وآمل أن تستمروا في تطوير هذا المشروع ليبقى منارة للعلم والتعليم.
+                                            </span>
+                                    </div>
+                                </li>
+                                <hr>
+                                <li class="p-list-items">
+                                    <img src="img/Abd.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+                                    <div class="p-list-para">
+                                        <span class="p-name" >Abdellahi</span>
+                                        <span class="p-comment">المبادرة التي تجمع بين التكنولوجيا والتعليم تساهم في تعزيز التواصل الأكاديمي وتبادل المعرفة بطرق حديثة وفعالة هذا الموقع  يعتبر  كنزا  تعليما ثمينا ذالك لما يضم من  أوراق و مستندات أكاديمية و علمية  تم اعدادها  من قبل  طلاب متميزين  بإشراف  دكاترة أكاديميين من مختلف المؤسسات التعليم العالي هذا الجهد يذكر فيشكر .</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="section-head" id="s-about">
+            <h1>About Me</h1>
+        </div>
+
+        <section class="section-2">
+            <div class="row">
+                <div class="s-card">
+                    <div class="s-card-img">
+                        <figure>
+                            <img src="img/Me.jpg" alt="something">
+                            <figcaption>Developer</figcaption>
+                        </figure>
+                    </div>
+                    <div class="s-card-content">
+                        <h2 class="p-titel">Mohamed Ahmed Koumba</h2>
+                        <p class="p-comment">يشرفني أن أقدم هذا الموقع، الذي يعكس شغفي العميق بتوفير مصادر تعليمية مميزة للطلاب. كانت الفكرة دائمًا هي تسهيل الوصول إلى المعرفة الأكاديمية والمراجع التي يحتاجها كل طالب لتحقيق النجاح. آمل أن يكون هذا الموقع مرجعًا موثوقًا ومصدر إلهام لكل من يسعى للتميز الأكاديمي. شكري وتقديري لكل من ساهم ودعم هذه المبادرة، وأتطلع لأن يكون هذا المشروع خطوة نحو مستقبل أفضل في مجال التعليم.</p>
+                    </div>
+                </div>
+
+      
+
+        </section>
+
+        <div class="section-head" id="s-contact">
+            <h1>Contact Me</h1>
+        </div>
+        <section class="section-3">
+            <main>
+                
+                <div class="formstyle">
+                    <h2>Wanna say HI!</h2>
+                    
+     <form id="contactForm" class = "form1">
+        <textarea id="message" placeholder="Any message for Me?"></textarea>
+        <div>
+            <button type="button" id="msgbtn" onclick  ="sendMessage()">
+                <i class="fa fa-whatsapp icon"></i>     إرسال عبر الواتساب
+            </button>
+            <button type="button" id="msgbtn"class="email" onclick="sendEmail()">
+                <i class="fa fa-envelope icon"></i> إرسال عبر البريد الإلكتروني
+            </button>
+        </div>
+    </form>              
+                
+                
+                </div>
+            </main>
+        </section>
+
+        <div class="footer">
+            <div class="f-block1">
+                <div class="icons">
+                    <i class="fa fa-facebook-official icon"></i>
+                    <i class="fa fa-instagram icon"></i>
+                    <i class="fa fa-snapchat icon"></i>
+                    <i class="fa fa-pinterest-p icon"></i>
+                    <i class="fa fa-twitter icon"></i>
+                    <i class="fa fa-linkedin icon"></i>
+                </div>
+               
+                <p><b>©2024 .All Right Reserved.  <br />  Created by Mohamed Ahmed Koumba</b> </a>
+                </p>
+            </div>
+
+       
+
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    </div>
+    <script src="index.js"></script>
+    
+    
+     <!-- Script لعرض الملفات -->
+    <script>
+        // دالة لتبديل عرض القوائم
+        function toggleFiles(listIdToShow, listIdToHide) {
+            var listToShow = document.getElementById(listIdToShow);
+            var listToHide = document.getElementById(listIdToHide);
+
+            // إذا كانت القائمة المخفية، اعرضها وأخف القائمة الأخرى
+            if (listToShow.style.display === "none" || listToShow.style.display === "") {
+                listToShow.style.display = "block"; // عرض القائمة
+                listToHide.style.display = "none";  // إخفاء القائمة الأخرى
+            } else {
+                listToShow.style.display = "none"; // إخفاء القائمة إذا كانت معروضة
+            }
+        }
+
+function sendMessage() {
+            var message = document.getElementById('message').value;
+            var phoneNumber = "22244121245"; // ضع رقم هاتفك هنا بصيغة دولية بدون "+"
+
+            // التحقق من أن الرسالة ليست فارغة
+            if (message.trim() !== "") {
+                // إنشاء رابط واتساب
+                var whatsappLink = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+                // إعادة توجيه المستخدم إلى واتساب
+                window.open(whatsappLink, "_blank");
+            } else {
+                alert("يرجى كتابة رسالة قبل الإرسال");
+            }
+        }
+
+        function sendEmail() {
+            var message = document.getElementById('message').value;
+            var email = "Medkoumba@gmail.com"; // ضع عنوان بريدك الإلكتروني هنا
+
+            // التحقق من أن الرسالة ليست فارغة
+            if (message.trim() !== "") {
+                // إنشاء رابط mailto
+                var mailtoLink = "mailto:" + email + "?subject=رسالة جديدة&body=" + encodeURIComponent(message);
+                // فتح تطبيق البريد الإلكتروني
+                window.location.href = mailtoLink;
+            } else {
+                alert("يرجى كتابة رسالة قبل الإرسال");
+            }
+        }
+
+window.onscroll = function() {
+
+var mybutton = document.getElementById("myBtn");
+
+    if (document.documentElement.scrollTop > 200) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+}
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
+    </script>
+    
+    
+
+</body>
+
+</html>
