@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My site</title>
+    <link rel="stylesheet" href="New.css"> <!-- ربط ملف CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Al-Aqsa</div>
+        <nav>
+            <ul>
+                <li><a class="ac" href="#home">Cours</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('tab1')">Banque et Assurance</button>
+        <button class="tab-btn" onclick="showTab('tab2')">Finance et Comptabilité</button>
+        <button class="tab-btn" onclick="showTab('tab3')">Gestion de Ressources humaines</button>
+    </div>
+
+    <section id="tab1" class="tab-content active">
+        <div class="documents-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                        <th>Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Comptabilité</td>
+                        <td>Comptabilité Général |S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1oULC6eHh42DDRy-rt1DkXMEtlfuT3-nW" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Intr.Economique</td>
+                        <td>Intro.Economique | S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1nHQLma2Cxmt4dEuEa9FZ5bIE--qsAEq7" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Englais</td>
+                        <td> Engalis | S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1Mlr1apKFvSXY86TwlTNnjzy1u39RBTU5" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Informatique</td>
+                        <td>Bureautique | S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1tBpiXfCV4PslMm28fp-ZBP3zU_PbbYOv" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Math</td>
+                        <td>Mathématique | S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1kBZdUP718JavjCkJwmr8Fo9ZHWOt6QNl" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>MTU</td>
+                        <td>MTU | S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1Akm3VMCN4SaOR_9S-Ch9TqbE7F5PNv03" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Principe de gestion</td>
+                        <td>Principe de gestion| S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1nLvRa3BRXaxDwJiBbmp7h7Ij6Vu5RyKD" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Statistique</td>
+                        <td>Stat | S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1GMveiLIY3Xa8oI62u1ET28RwP0UkzBPB" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Tecnique de Communication</td>
+                        <td>Tec Communi | S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1ieDqY9fy3mi8uYRnDUtxMyPJBK-gSEmg" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Droit</td>
+                        <td>Droit | S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1MHMdbrVYVwxtlIVza07I_4bd8Vv03RuV" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                       <tr>
+                        <td>Archive</td>
+                        <td>Archive BA | L1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/file/d/1W4nbX0Q7_6GUOQBlU-OwV_ehEnE_CIXh/view?usp=drivesdk" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Economie de ľentreprise</td>
+                        <td>Economie de ETS| S2.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1GVOZyWb0ycxid0pMVLuYbnwYWfZx6AUY" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Micro Economie</td>
+                        <td>Micro Eco | S2.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1yXFkYshMyAX6lM0qLqAXXPW3XtZ7xWVJ" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Macro Economie</td>
+                        <td>Macro Economi | S2.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/12AXDhWArMt9EYFZgSvzlY3dq3rwqr0Ev" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="tab2" class="tab-content">
+        <div class="documents-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                        <th>Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                     <tr>
+                        <td>Comptabilité</td>
+                        <td>Comptabilité Général |S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1oULC6eHh42DDRy-rt1DkXMEtlfuT3-nW" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Intr.Economique</td>
+                        <td>Intro.Economique | S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1nHQLma2Cxmt4dEuEa9FZ5bIE--qsAEq7" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Englais</td>
+                        <td> Engalis | S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1Mlr1apKFvSXY86TwlTNnjzy1u39RBTU5" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Informatique</td>
+                        <td>Bureautique | S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1tBpiXfCV4PslMm28fp-ZBP3zU_PbbYOv" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Math</td>
+                        <td>Mathématique | S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1kBZdUP718JavjCkJwmr8Fo9ZHWOt6QNl" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>MTU</td>
+                        <td>MTU | S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1Akm3VMCN4SaOR_9S-Ch9TqbE7F5PNv03" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Principe de gestion</td>
+                        <td>Principe de gestion| S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1nLvRa3BRXaxDwJiBbmp7h7Ij6Vu5RyKD" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Statistique</td>
+                        <td>Stat | S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1GMveiLIY3Xa8oI62u1ET28RwP0UkzBPB" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Tecnique de Communication</td>
+                        <td>Tec Communi | S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1ieDqY9fy3mi8uYRnDUtxMyPJBK-gSEmg" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>Droit</td>
+                        <td>Droit | S1.</td>
+                        <td><i class="fas fa-file-pdf" style="color:red;"></i></td>
+                        <td><a href="https://drive.google.com/drive/folders/1MHMdbrVYVwxtlIVza07I_4bd8Vv03RuV" download class="download-btn"><i class="fas fa-download"></i></a></td>
+                    </tr>
+                 
+                       
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- القسم الثالث بدون ملفات -->
+    <section id="tab3" class="tab-content">
+        <div class="documents-container">
+            <p class="no-files-message">لا توجد ملفات في هذا القسم حاليا!</p>
+        </div>
+    </section>
+
+    <button class="floating-btn" onclick="window.location.href='index.html'">
+        <i class="fas fa-home"></i>
+    </button>
+
+    <script>
+        function showTab(tabId) {
+            // إخفاء جميع التبويبات
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // إظهار التبويب المحدد
+            document.getElementById(tabId).classList.add('active');
+
+            // تحديث الأزرار لتشير إلى التبويب النشط
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(button => button.classList.remove('active'));
+            document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>

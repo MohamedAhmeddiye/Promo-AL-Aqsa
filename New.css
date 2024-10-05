@@ -1,0 +1,155 @@
+/* الأساسيات */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+header .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.ac {
+    padding: 8px 10px;
+    margin: 0 5px;
+    background-color: #807f7fd5;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 5px; /* الزوايا المدورة للزر */
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 5px; /* الزوايا المدورة للزر */
+}
+
+.tab-btn.active {
+    background-color: #333;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* تنسيق الجدول */
+.documents-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px; /* الزوايا المدورة للجدول */
+    overflow: hidden; /* تأكد من عدم ظهور الزوايا المدورة */
+}
+
+.documents-container th, 
+.documents-container td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.documents-container th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+/* تنسيق الأيقونات */
+.documents-container i {
+    font-size: 24px;
+}
+
+/* زر التحميل مع تأثير */
+.download-btn {
+    display: inline-block;
+    font-size: 24px;
+    color: #333;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.download-btn:hover {
+    transform: translateY(-5px); /* تأثير الحركة للأعلى */
+    color: #007BFF; /* لون مختلف عند التحريك */
+}
+
+/* زر عائم دائري */
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50%; /* الزوايا المدورة للزر العائم */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-btn:hover {
+    background-color: #555;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.floating-btn i {
+    pointer-events: none;
+}
+
+/* تنسيق رسالة "لا توجد ملفات" */
+.no-files-message {
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* استجابة للشاشات الصغيرة */
+@media screen and (max-width: 768px) {
+    .documents-container table {
+        font-size: 14px;
+    }
+    .documents-container i {
+        font-size: 20px;
+    }
+}
