@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moyenne de Classement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        #result, #masterGrade {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>حساب المعدل</h2>
+    
+    <label for="studentName">اسم الطالب:</label>
+    <input type="text" id="studentName" required>
+
+    <label for="studentId">رقم الطالب:</label>
+    <input type="text" id="studentId" required>
+
+    <label for="major">التخصص:</label>
+    <select id="major" required>
+        <option value="">اختر التخصص</option>
+        <option value="1">MBF</option>
+        <option value="2">CCA</option>
+        <option value="3">M SCG</option>
+        <option value="4">Entrepreneure</option>
+        <option value="5">Finance et Fiscalité</option>
+        <option value="6">M RH</option>
+    </select>
+
+    <label for="degreeType">Fillier</label>
+    <select id="degreeType" required>
+        <option value="">Fillier</option>
+        <option value="BA">BA</option>
+        <option value="FC">FC</option>
+        <option value="GRH">GRH</option>
+    </select>
+
+    <label for="S1">نتيجة الفصل الدراسي الأول (S1):</label>
+    <input type="number" id="S1" min="0" max="100" required>
+
+    <label for="S2">نتيجة الفصل الدراسي الثاني (S2):</label>
+    <input type="number" id="S2" min="0" max="100" required>
+
+    <label for="S3">نتيجة الفصل الدراسي الثالث (S3):</label>
+    <input type="number" id="S3" min="0" max="100" required>
+
+    <label for="S4">نتيجة الفصل الدراسي الرابع (S4):</label>
+    <input type="number" id="S4" min="0" max="100" required>
+
+    <label for="S5">نتيجة الفصل الدراسي الخامس (S5):</label>
+    <input type="number" id="S5" min="0" max="100" required>
+
+    <label for="S6">نتيجة الفصل الدراسي السادس (S6):</label>
+    <input type="number" id="S6" min="0" max="100" required>
+
+    <label for="Bon">No de Rattrapage (0-6):</label>
+    <select id="Bon" required>
+        <option value="">اختر قيمة</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+    </select>
+
+    <label for="Li">Licence obtenue sur 3 ans</label>
+    <select id="Li" required>
+        <option value="">اختر قيمة</option>
+        <option value="yes">نعم</option>
+        <option value="no">لا</option>
+    </select>
+
+    <button onclick="calculate()">احسب المعدل</button>
+    <div id="result"></div>
+
+    <div id="masterGrade"></div>
+
+    <button onclick="saveData()">حفظ البيانات</button>
+</div>
+
+<script>
+    let masterGradeValue = 0;
+
+    function validateInputs() {
+        const fields = [
+            'studentName', 'studentId', 'S1', 'S2', 'S3', 
+            'S4', 'S5', 'S6', 'Bon', 'Li', 'major', 'degreeType'
+        ];
+
+        for (const field of fields) {
+            const value = document.getElementById(field).value;
+            if (!value) {
+                alert("يرجى ملء جميع الحقول.");
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    function calculate() {
+        if (!validateInputs()) return;
+
+        const S1 = parseFloat(document.getElementById('S1').value);
+        const S2 = parseFloat(document.getElementById('S2').value);
+        const S3 = parseFloat(document.getElementById('S3').value);
+        const S4 = parseFloat(document.getElementById('S4').value);
+        const S5 = parseFloat(document.getElementById('S5').value);
+        const S6 = parseFloat(document.getElementById('S6').value);
+        const Bon = parseFloat(document.getElementById('Bon').value);
+        const Li = document.getElementById('Li').value;
+
+        if (isNaN(S1) || isNaN(S2) || isNaN(S3) || isNaN(S4) || isNaN(S5) || isNaN(S6) || isNaN(Bon)) {
+            alert("يرجى إدخال أرقام صحيحة في حقول الدرجات.");
+            return;
+        }
+
+        // حساب المعدل العام
+        const MG = ((S1 + S2) * 1 + (S3 + S4) * 2 + (S5 + S6) * 3) / 12;
+
+        // حساب معدل الماستر
+        let BonFactor = Bon === 0 ? 6 * 0.4 : Bon * 0.4;
+        const LiFactor = Li === "yes" ? 1 : -1;
+        masterGradeValue = MG + BonFactor + LiFactor;
+
+        // عرض النتيجة
+        document.getElementById('result').innerHTML = `المعدل العام: ${MG.toFixed(2)}`;
+        document.getElementById('masterGrade').innerHTML = `معدل الماستر: ${masterGradeValue.toFixed(2)}`;
+    }
+
+    function saveData() {
+        if (!validateInputs()) return;
+
+        const studentName = document.getElementById('studentName').value;
+        const studentId = document.getElementById('studentId').value;
+        const major = document.getElementById('major').value;
+        const degreeType = document.getElementById('degreeType').value;
+
+        if (masterGradeValue === 0) {
+            alert("يرجى حساب المعدل قبل حفظ البيانات.");
+            return;
+        }
+
+        // إرسال البيانات إلى Google Apps Script
+        const url = "https://script.google.com/macros/s/AKfycbzzpS8dBEQT4pVEI0VzaEx0Kyllo1b0MUO4oWKHje9Nz_MousWo9wmcCFLp5UE-Q4H03w/exec"; // استبدل YOUR_SCRIPT_ID بالمعرف الخاص بك
+        const data = {
+            "studentName": studentName,
+            "studentId": studentId,
+            "major": major,
+            "degreeType": degreeType,
+            "masterGrade": masterGradeValue.toFixed(2)
+        };
+
+        fetch(url, {
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => {
+            console.log('Success:', result);
+            alert("تم حفظ البيانات بنجاح!");
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert("حدث خطأ أثناء حفظ البيانات.");
+        });
+    }
+</script>
+
+</body>
+</html>
