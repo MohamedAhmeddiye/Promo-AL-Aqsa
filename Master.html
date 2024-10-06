@@ -54,6 +54,11 @@
             background-color: #45a049;
         }
     </style>
+
+    <!-- إضافة مكتبة Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+
 </head>
 <body>
 
@@ -103,7 +108,7 @@
     <label for="S6">نتيجة الفصل الدراسي السادس (S6):</label>
     <input type="number" id="S6" min="0" max="100" required>
 
-    <label for="Bon">No de semester validé (0-6):</label>
+    <label for="Bon">No de Rattrapage (0-6):</label>
     <select id="Bon" required>
         <option value="">اختر قيمة</option>
         <option value="0">0</option>
@@ -131,6 +136,22 @@
 </div>
 
 <script>
+    // إعداد Firebase
+    const firebaseConfig = {
+    apiKey: "AIzaSyBG8MhOuCL11sXIfqEYhqPPOYW-8uIon0M",
+    authDomain: "masterdata2025fsje.firebaseapp.com",
+    databaseURL: "https://masterdata2025fsje-default-rtdb.firebaseio.com",
+    projectId: "masterdata2025fsje",
+    storageBucket: "masterdata2025fsje.appspot.com",
+    messagingSenderId: "711523986927",
+    appId: "1:711523986927:web:5985964c8280f485dfda1a",
+    measurementId: "G-LMEJXENPFB"// استبدل بمعرف التطبيق الخاص بك
+    };
+
+    // تهيئة التطبيق Firebase
+    firebase.initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
     let masterGradeValue = 0;
 
     function validateInputs() {
@@ -171,7 +192,7 @@
         const MG = ((S1 + S2) * 1 + (S3 + S4) * 2 + (S5 + S6) * 3) / 12;
 
         // حساب معدل الماستر
-        let BonFactor = Bon * 0.4;
+        let BonFactor =Bon * 0.4;
         const LiFactor = Li === "yes" ? 1 : -1;
         masterGradeValue = MG + BonFactor + LiFactor;
 
@@ -186,40 +207,34 @@
         const studentName = document.getElementById('studentName').value;
         const studentId = document.getElementById('studentId').value;
         const major = document.getElementById('major').value;
-        const degreeType = document.getElementById('degreeType').value;
+    const degreeType = document.getElementById('degreeType').value;
 
         if (masterGradeValue === 0) {
             alert("يرجى حساب المعدل قبل حفظ البيانات.");
             return;
         }
 
-        // إرسال البيانات إلى Google Apps Script
-        const url = "https://script.google.com/macros/s/AKfycbzzpS8dBEQT4pVEI0VzaEx0Kyllo1b0MUO4oWKHje9Nz_MousWo9wmcCFLp5UE-Q4H03w/exec"; // استبدل YOUR_SCRIPT_ID بالمعرف الخاص بك
+        // إنشاء كائن البيانات
         const data = {
-            "studentName": studentName,
-            "studentId": studentId,
-            "major": major,
-            "degreeType": degreeType,
-            "masterGrade": masterGradeValue.toFixed(2)
+            studentName: studentName,
+            studentId: studentId,
+            major: major,
+            degreeType: degreeType,
+            masterGrade: masterGradeValue.toFixed(2)
         };
 
-        fetch(url, {
-            method: "POST",
-            mode: "cors",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(result => {
-            console.log('Success:', result);
-            alert("تم حفظ البيانات بنجاح!");
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert("حدث خطأ أثناء حفظ البيانات.");
-        });
+        // تخزين البيانات في Firebase
+        const database = firebase.database();
+        const newDataRef = database.ref('students').push(); // قم بإنشاء مرجع جديد للبيانات
+        newDataRef.set(data)
+            .then(() => {
+                console.log('Data saved successfully!');
+                alert("تم حفظ البيانات بنجاح!");
+            })
+            .catch((error) => {
+                console.error('Error saving data:', error);
+                alert("حدث خطأ أثناء حفظ البيانات.");
+            });
     }
 </script>
 
