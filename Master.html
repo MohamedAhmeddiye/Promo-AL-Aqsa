@@ -53,6 +53,13 @@
         button:hover {
             background-color: #45a049;
         }
+        #calculateBtn {
+            background-color: #007BFF;
+        }
+        #calculateBtn:hover {
+            background-color: #0056b3;
+        }
+        
     </style>
 
     <!-- إضافة مكتبة Firebase -->
@@ -127,7 +134,7 @@
         <option value="no">لا</option>
     </select>
 
-    <button onclick="calculate()">احسب المعدل</button>
+    <button id="calculateBtn" onclick="calculate()">احسب المعدل</button>
     <div id="result"></div>
 
     <div id="masterGrade"></div>
@@ -198,8 +205,8 @@
             return;
         }
 
-        // إرسال البيانات إلى Google Apps Script
-        const url = "https://script.google.com/macros/s/AKfycbzzpS8dBEQT4pVEI0VzaEx0Kyllo1b0MUO4oWKHje9Nz_MousWo9wmcCFLp5UE-Q4H03w/exec"; // استبدل YOUR_SCRIPT_ID بالمعرف الخاص بك
+        // إرسال البيانات إلى webhook
+        const url = "https://hooks.zapier.com/hooks/catch/20335120/2mawgia/"; // استبدل YOUR_SCRIPT_ID بالمعرف الخاص بك
         const data = {
             "studentName": studentName,
             "studentId": studentId,
@@ -208,9 +215,9 @@
             "masterGrade": masterGradeValue.toFixed(2)
         };
 
-        fetch(url, {
+        fetch(webhookUrl, {
             method: "POST",
-            mode: "cors",
+            
             headers: {
                 "Content-Type": "application/json"
             },
